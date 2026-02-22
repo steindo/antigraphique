@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" data-font="inter" data-brightness="100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigraphique - Interactive Learning</title>
+    
+    <!-- Modern Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    
+    <!-- Hover Target for Sidebar -->
+    <div id="sidebar-trigger"></div>
+
+    <!-- Dynamic Sidebar -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <ion-icon name="book-outline"></ion-icon>
+                <span>Antigraphique</span>
+            </div>
+        </div>
+        
+        <div class="sidebar-search">
+            <ion-icon name="search-outline"></ion-icon>
+            <input type="text" id="route-search" placeholder="Rechercher une unité...">
+        </div>
+
+        <nav id="sidebar-nav" class="sidebar-nav">
+            <!-- Dynamically populated by Agent Cartographe's data -->
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="dashboard-mini">
+                <div class="dashboard-stat">
+                    <span class="stat-value">0%</span>
+                    <span class="stat-label">Progression</span>
+                </div>
+                <div class="dashboard-stat">
+                    <span class="stat-value">0</span>
+                    <span class="stat-label">Score</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="main-content" class="main-content">
+        <!-- Floating Settings Menu -->
+        <header class="top-nav">
+            <div class="nav-breadcrumbs" id="breadcrumbs">
+                <span>Accueil</span> <ion-icon name="chevron-forward-outline"></ion-icon> <span>Sélectionnez une unité</span>
+            </div>
+            
+            <div class="settings-toolbar">
+                <div class="setting-group">
+                    <button class="settings-btn" id="theme-btn" title="Modifier le thème">
+                        <ion-icon name="color-palette-outline"></ion-icon>
+                    </button>
+                    <div class="settings-dropdown" id="theme-dropdown">
+                        <button data-action="theme" data-value="light">Clair</button>
+                        <button data-action="theme" data-value="dark">Sombre</button>
+                        <button data-action="theme" data-value="sepia">Papier (Sépia)</button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <button class="settings-btn" id="font-btn" title="Modifier la police">
+                        <ion-icon name="text-outline"></ion-icon>
+                    </button>
+                    <div class="settings-dropdown" id="font-dropdown">
+                        <button data-action="font" data-value="inter" style="font-family: 'Inter', sans-serif;">Moderne (Inter)</button>
+                        <button data-action="font" data-value="outfit" style="font-family: 'Outfit', sans-serif;">Ronde (Outfit)</button>
+                        <button data-action="font" data-value="dyslexic" style="font-family: 'Comic Neue', sans-serif;">Lecture facile</button>
+                    </div>
+                </div>
+
+                <div class="setting-group">
+                    <button class="settings-btn" id="brightness-btn" title="Ajuster la luminosité">
+                        <ion-icon name="sunny-outline"></ion-icon>
+                    </button>
+                    <div class="settings-dropdown range-dropdown" id="brightness-dropdown">
+                        <input type="range" id="brightness-slider" min="50" max="150" value="100">
+                        <span>% Lumière</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Placeholder for Scribe -->
+        <article id="content-render-area" class="content-render-area">
+            <div class="welcome-banner">
+                <ion-icon name="sparkles-outline"></ion-icon>
+                <h1>Bienvenue dans le système Antigraphique.</h1>
+                <p>Déplacez votre souris sur le bord gauche pour ouvrir le menu adaptatif.</p>
+                <p>Sélectionnez une unité pour commencer.</p>
+            </div>
+        </article>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+import json
+import os
+from PIL import Image
+
+# Setup directories
+base_dir = r"c:\Users\user\Desktop\malik\exo\antigravity\lot1"
+screenshots_dir = os.path.join(base_dir, "hd_screenshots")
+os.makedirs(screenshots_dir, exist_ok=True)
+
+# 1. Image cropper for page9 table
+try:
+    page9_path = os.path.join(base_dir, "page9.jpg")
+    img = Image.open(page9_path)
+    width, height = img.size
+    # crop the middle section where the table is approximately
+    left = int(width * 0.1)
+    top = int(height * 0.45)
+    right = int(width * 0.9)
+    bottom = int(height * 0.75)
+    
+    table_img = img.crop((left, top, right, bottom))
+    table_img_path = os.path.join(screenshots_dir, "page9_table.jpg")
+    table_img.save(table_img_path)
+except Exception as e:
+    print(f"Image cropping failed: {e}")
+
+# 2. Build scan results
+scan_results = {
+    "batch_id": "lot1",
+    "pages": [
+        {
+            "filename": "page1.jpg",
+            "ocr_text": "BESTSELLING VOCABULARY WORKBOOK\nCheck Your English Vocabulary for IELTS\n4th edition\nEssential words and phrases to help you maximise your IELTS score\nIdeal for self-study or classroom use\nRAWDON WYATT\nBLOOMSBURY",
+            "complex_elements": []
+        },
+        {
+            "filename": "page2.jpg",
+            "ocr_text": "CHECK YOUR ENGLISH VOCABULARY FOR IELTS\nby Rawdon Wyatt\nBloomsbury Information\nAn imprint of Bloomsbury Publishing Plc\nBLOOMSBURY\nLONDON • OXFORD • NEW YORK • NEW DELHI • SYDNEY",
+            "complex_elements": []
+        },
+        {
+            "filename": "page3.jpg",
+            "ocr_text": "About this workbook\nIntroduction\nThis workbook has been written for students who are planning to sit either the Academic or General Training modules of the IELTS examination. It covers some of the main vocabulary areas that you will need for, or come across in, the Listening, Reading, Writing and Speaking sections of the exam.\nWe hope that you find the exercises in this book useful, and that the vocabulary you acquire will help you to achieve the grade you want in the IELTS.\nGood luck!\n\nStructure of the book\nEach vocabulary area is presented in the form of a self-contained module with task-based activities which present each vocabulary item in context.\n- Pages 1 – 57 focus on general vocabulary items...\n- Pages 58 – 104 focus on topic-specific vocabulary areas...\n- Pages 105 – 119 contain some productive practice exercises...",
+            "complex_elements": []
+        },
+        {
+            "filename": "page4.jpg",
+            "ocr_text": "- Pages 120 – 139 contain a comprehensive key so you can check your answers. The answer key also gives additional information...\nUsing the workbook\nYou should not work through the book mechanically from beginning to end. It is better to choose areas that you are unfamiliar with...\nRecording, reviewing and extending your vocabulary\nRemember that you should keep a record of new words, phrases and expressions...\nUsing an English dictionary\nTo help you develop your vocabulary more effectively, you should use a good monolingual English dictionary...\nThe International English Language Testing System (IELTS)\nThe IELTS is administered by the University of Cambridge Local Examinations Syndicate...",
+            "complex_elements": []
+        },
+        {
+            "filename": "page5.jpg",
+            "ocr_text": "Opinion, attitude & belief\nOpposites: adjectives\nOpposites: verbs\nOwnership, giving, lending & borrowing\nPhrasal verbs 1\nPhrasal verbs 2\nPhrasal verbs 3\nPhrasal verbs 4\nPresenting an argument\nReason & result\nShape & features\nSize, quantity & dimension\nSpelling\nStopping something\nSuccess & failure\nTask commands\nTime\nUseful interview expressions\n\nTopic-specific vocabulary\nArchitecture\nThe arts\nBusiness & industry\nChildren & the family\nCrime & the law\nEducation",
+            "complex_elements": []
+        },
+        {
+            "filename": "page6.jpg",
+            "ocr_text": "Contents\n\nGeneral vocabulary\nAddition, equation and conclusion\nAround the world\nChanges 1\nChanges 2\nCondition\nConfusing words & false friends 1\nConfusing words & false friends 2\nContext & meaning 1\nContext & meaning 2\nContext & meaning 3\nContrast and comparison\nEmphasis & misunderstanding\nFocusing attention\nGeneralisations & specifics\nGroups\nHow something works\nJoining or becoming part of something bigger\nLikes & dislikes\nLocation & direction\nModified words\nObjects & actions\nObligation & option",
+            "complex_elements": []
+        },
+        {
+            "filename": "page7.jpg",
+            "ocr_text": "The environment\nFood & diet\nGeography\nGlobal problems\nHealthcare\nThe media\nMen & women\nMoney & finance\nOn the road\nScience & technology\nSport\nTown & country\nTravel\nWork\n\nProductive practice\nPractice tasks 1\nPractice tasks 1: Sample answers\nPractice tasks 2\nPractice tasks 2: Sample answers\nPractice tasks 3\nPractice tasks 3: Sample answers\nPractice tasks 4\nPractice tasks 4: Sample answers\nPractice tasks 5\nPractice tasks 5: Sample answers",
+            "complex_elements": []
+        },
+        {
+            "filename": "page8.jpg",
+            "ocr_text": "Answers",
+            "complex_elements": []
+        },
+        {
+            "filename": "page9.jpg",
+            "ocr_text": "Addition, equation & conclusion\n1 Put the following words and phrases into their correct place in the table depending on their function.\nalong with also and as well as besides correspondingly equally furthermore in addition in brief in conclusion in the same way likewise moreover similarly thus therefore to conclude to summarise to sum up briefly too we can conclude that what's more\n[TABLE_PLACEHOLDER]\n2 Complete these sentences with one of the words or phrases from above. In most cases, more than one answer is possible.\n1. Tourism brings much-needed money to developing countries. ...................................., it provides employment for the local population.",
+            "complex_elements": [
+                {
+                    "type": "table",
+                    "description": "Table for categorizing words into Addition, Equation, Conclusion",
+                    "hd_screenshot_path": "hd_screenshots/page9_table.jpg"
+                }
+            ]
+        },
+        {
+            "filename": "page10.jpg",
+            "ocr_text": "2. ......................................... bringing much-needed money to developing countries, tourism provides employment for the local population.\n3. Tourists should respect the local environment. ......................................... they should respect the local customs.\n4. ......................................... industrial waste, pollution from car fumes is poisoning the environment.\n5. In order to travel, you need a passport. ......................................... , you might need a visa, immunisation jabs and written permission to visit certain areas.\n6. Drugs are banned in Britain - ......................................... weapons such as guns and knives.\n7. All power corrupts. ......................................... , absolute power corrupts absolutely.\n8. You shouldn't smoke, drink, take drugs or eat unhealthy food. ......................................... , you should live a more healthy lifestyle.\n9. The ozone layer is becoming depleted, the air in the cities is becoming too dirty to breathe and our seas and rivers are no longer safe to swim in. ......................................... pollution is slowly destroying the planet.\n10. Your grades have been very poor for the past two years. ......................................... you need to work really hard if you want to pass your exams next month.",
+            "complex_elements": []
+        }
+    ]
+}
+
+# Write results to json
+with open(os.path.join(base_dir, "scan_results.json"), "w", encoding="utf-8") as f:
+    json.dump(scan_results, f, ensure_ascii=False, indent=2)
+
+print("Scan complete. Results written to scan_results.json")
+# also print where screenshots are
+print("Screenshots saved to:", screenshots_dir)

@@ -1,0 +1,373 @@
+{
+  "project": "Antigraphique",
+  "categories": [
+    {
+      "title": "General vocabulary",
+      "id_category": "cat_general-vocabulary",
+      "units": [
+        {
+          "id_unit": "unit_1",
+          "title": "Addition, equation and conclusion",
+          "route": "/general-vocabulary/addition-equation-and-conclusion"
+        },
+        {
+          "id_unit": "unit_2",
+          "title": "Around the world",
+          "route": "/general-vocabulary/around-the-world"
+        },
+        {
+          "id_unit": "unit_3",
+          "title": "Changes 1",
+          "route": "/general-vocabulary/changes-1"
+        },
+        {
+          "id_unit": "unit_4",
+          "title": "Changes 2",
+          "route": "/general-vocabulary/changes-2"
+        },
+        {
+          "id_unit": "unit_5",
+          "title": "Condition",
+          "route": "/general-vocabulary/condition"
+        },
+        {
+          "id_unit": "unit_6",
+          "title": "Confusing words & false friends 1",
+          "route": "/general-vocabulary/confusing-words-false-friends-1"
+        },
+        {
+          "id_unit": "unit_7",
+          "title": "Confusing words & false friends 2",
+          "route": "/general-vocabulary/confusing-words-false-friends-2"
+        },
+        {
+          "id_unit": "unit_8",
+          "title": "Context & meaning 1",
+          "route": "/general-vocabulary/context-meaning-1"
+        },
+        {
+          "id_unit": "unit_9",
+          "title": "Context & meaning 2",
+          "route": "/general-vocabulary/context-meaning-2"
+        },
+        {
+          "id_unit": "unit_10",
+          "title": "Context & meaning 3",
+          "route": "/general-vocabulary/context-meaning-3"
+        },
+        {
+          "id_unit": "unit_11",
+          "title": "Contrast and comparison",
+          "route": "/general-vocabulary/contrast-and-comparison"
+        },
+        {
+          "id_unit": "unit_12",
+          "title": "Emphasis & misunderstanding",
+          "route": "/general-vocabulary/emphasis-misunderstanding"
+        },
+        {
+          "id_unit": "unit_13",
+          "title": "Focusing attention",
+          "route": "/general-vocabulary/focusing-attention"
+        },
+        {
+          "id_unit": "unit_14",
+          "title": "Generalisations & specifics",
+          "route": "/general-vocabulary/generalisations-specifics"
+        },
+        {
+          "id_unit": "unit_15",
+          "title": "Groups",
+          "route": "/general-vocabulary/groups"
+        },
+        {
+          "id_unit": "unit_16",
+          "title": "How something works",
+          "route": "/general-vocabulary/how-something-works"
+        },
+        {
+          "id_unit": "unit_17",
+          "title": "Joining or becoming part of something bigger",
+          "route": "/general-vocabulary/joining-or-becoming-part-of-something-bigger"
+        },
+        {
+          "id_unit": "unit_18",
+          "title": "Likes & dislikes",
+          "route": "/general-vocabulary/likes-dislikes"
+        },
+        {
+          "id_unit": "unit_19",
+          "title": "Location & direction",
+          "route": "/general-vocabulary/location-direction"
+        },
+        {
+          "id_unit": "unit_20",
+          "title": "Modified words",
+          "route": "/general-vocabulary/modified-words"
+        },
+        {
+          "id_unit": "unit_21",
+          "title": "Objects & actions",
+          "route": "/general-vocabulary/objects-actions"
+        },
+        {
+          "id_unit": "unit_22",
+          "title": "Obligation & option",
+          "route": "/general-vocabulary/obligation-option"
+        },
+        {
+          "id_unit": "unit_23",
+          "title": "Opinion, attitude & belief",
+          "route": "/general-vocabulary/opinion-attitude-belief"
+        },
+        {
+          "id_unit": "unit_24",
+          "title": "Opposites: adjectives",
+          "route": "/general-vocabulary/opposites-adjectives"
+        },
+        {
+          "id_unit": "unit_25",
+          "title": "Opposites: verbs",
+          "route": "/general-vocabulary/opposites-verbs"
+        },
+        {
+          "id_unit": "unit_26",
+          "title": "Ownership, giving, lending & borrowing",
+          "route": "/general-vocabulary/ownership-giving-lending-borrowing"
+        },
+        {
+          "id_unit": "unit_27",
+          "title": "Phrasal verbs 1",
+          "route": "/general-vocabulary/phrasal-verbs-1"
+        },
+        {
+          "id_unit": "unit_28",
+          "title": "Phrasal verbs 2",
+          "route": "/general-vocabulary/phrasal-verbs-2"
+        },
+        {
+          "id_unit": "unit_29",
+          "title": "Phrasal verbs 3",
+          "route": "/general-vocabulary/phrasal-verbs-3"
+        },
+        {
+          "id_unit": "unit_30",
+          "title": "Phrasal verbs 4",
+          "route": "/general-vocabulary/phrasal-verbs-4"
+        },
+        {
+          "id_unit": "unit_31",
+          "title": "Presenting an argument",
+          "route": "/general-vocabulary/presenting-an-argument"
+        },
+        {
+          "id_unit": "unit_32",
+          "title": "Reason & result",
+          "route": "/general-vocabulary/reason-result"
+        },
+        {
+          "id_unit": "unit_33",
+          "title": "Shape & features",
+          "route": "/general-vocabulary/shape-features"
+        },
+        {
+          "id_unit": "unit_34",
+          "title": "Size, quantity & dimension",
+          "route": "/general-vocabulary/size-quantity-dimension"
+        },
+        {
+          "id_unit": "unit_35",
+          "title": "Spelling",
+          "route": "/general-vocabulary/spelling"
+        },
+        {
+          "id_unit": "unit_36",
+          "title": "Stopping something",
+          "route": "/general-vocabulary/stopping-something"
+        },
+        {
+          "id_unit": "unit_37",
+          "title": "Success & failure",
+          "route": "/general-vocabulary/success-failure"
+        },
+        {
+          "id_unit": "unit_38",
+          "title": "Task commands",
+          "route": "/general-vocabulary/task-commands"
+        },
+        {
+          "id_unit": "unit_39",
+          "title": "Time",
+          "route": "/general-vocabulary/time"
+        },
+        {
+          "id_unit": "unit_40",
+          "title": "Useful interview expressions",
+          "route": "/general-vocabulary/useful-interview-expressions"
+        }
+      ]
+    },
+    {
+      "title": "Topic-specific vocabulary",
+      "id_category": "cat_topic-specific-vocabulary",
+      "units": [
+        {
+          "id_unit": "unit_41",
+          "title": "Architecture",
+          "route": "/topic-specific-vocabulary/architecture"
+        },
+        {
+          "id_unit": "unit_42",
+          "title": "The arts",
+          "route": "/topic-specific-vocabulary/the-arts"
+        },
+        {
+          "id_unit": "unit_43",
+          "title": "Business & industry",
+          "route": "/topic-specific-vocabulary/business-industry"
+        },
+        {
+          "id_unit": "unit_44",
+          "title": "Children & the family",
+          "route": "/topic-specific-vocabulary/children-the-family"
+        },
+        {
+          "id_unit": "unit_45",
+          "title": "Crime & the law",
+          "route": "/topic-specific-vocabulary/crime-the-law"
+        },
+        {
+          "id_unit": "unit_46",
+          "title": "Education",
+          "route": "/topic-specific-vocabulary/education"
+        },
+        {
+          "id_unit": "unit_47",
+          "title": "The environment",
+          "route": "/topic-specific-vocabulary/the-environment"
+        },
+        {
+          "id_unit": "unit_48",
+          "title": "Food & diet",
+          "route": "/topic-specific-vocabulary/food-diet"
+        },
+        {
+          "id_unit": "unit_49",
+          "title": "Geography",
+          "route": "/topic-specific-vocabulary/geography"
+        },
+        {
+          "id_unit": "unit_50",
+          "title": "Global problems",
+          "route": "/topic-specific-vocabulary/global-problems"
+        },
+        {
+          "id_unit": "unit_51",
+          "title": "Healthcare",
+          "route": "/topic-specific-vocabulary/healthcare"
+        },
+        {
+          "id_unit": "unit_52",
+          "title": "The media",
+          "route": "/topic-specific-vocabulary/the-media"
+        },
+        {
+          "id_unit": "unit_53",
+          "title": "Men & women",
+          "route": "/topic-specific-vocabulary/men-women"
+        },
+        {
+          "id_unit": "unit_54",
+          "title": "Money & finance",
+          "route": "/topic-specific-vocabulary/money-finance"
+        },
+        {
+          "id_unit": "unit_55",
+          "title": "On the road",
+          "route": "/topic-specific-vocabulary/on-the-road"
+        },
+        {
+          "id_unit": "unit_56",
+          "title": "Science & technology",
+          "route": "/topic-specific-vocabulary/science-technology"
+        },
+        {
+          "id_unit": "unit_57",
+          "title": "Sport",
+          "route": "/topic-specific-vocabulary/sport"
+        },
+        {
+          "id_unit": "unit_58",
+          "title": "Town & country",
+          "route": "/topic-specific-vocabulary/town-country"
+        },
+        {
+          "id_unit": "unit_59",
+          "title": "Travel",
+          "route": "/topic-specific-vocabulary/travel"
+        },
+        {
+          "id_unit": "unit_60",
+          "title": "Work",
+          "route": "/topic-specific-vocabulary/work"
+        }
+      ]
+    },
+    {
+      "title": "Productive practice",
+      "id_category": "cat_productive-practice",
+      "units": [
+        {
+          "id_unit": "unit_61",
+          "title": "Practice tasks 1",
+          "route": "/productive-practice/practice-tasks-1"
+        },
+        {
+          "id_unit": "unit_62",
+          "title": "Practice tasks 1: Sample answers",
+          "route": "/productive-practice/practice-tasks-1-sample-answers"
+        },
+        {
+          "id_unit": "unit_63",
+          "title": "Practice tasks 2",
+          "route": "/productive-practice/practice-tasks-2"
+        },
+        {
+          "id_unit": "unit_64",
+          "title": "Practice tasks 2: Sample answers",
+          "route": "/productive-practice/practice-tasks-2-sample-answers"
+        },
+        {
+          "id_unit": "unit_65",
+          "title": "Practice tasks 3",
+          "route": "/productive-practice/practice-tasks-3"
+        },
+        {
+          "id_unit": "unit_66",
+          "title": "Practice tasks 3: Sample answers",
+          "route": "/productive-practice/practice-tasks-3-sample-answers"
+        },
+        {
+          "id_unit": "unit_67",
+          "title": "Practice tasks 4",
+          "route": "/productive-practice/practice-tasks-4"
+        },
+        {
+          "id_unit": "unit_68",
+          "title": "Practice tasks 4: Sample answers",
+          "route": "/productive-practice/practice-tasks-4-sample-answers"
+        },
+        {
+          "id_unit": "unit_69",
+          "title": "Practice tasks 5",
+          "route": "/productive-practice/practice-tasks-5"
+        },
+        {
+          "id_unit": "unit_70",
+          "title": "Practice tasks 5: Sample answers",
+          "route": "/productive-practice/practice-tasks-5-sample-answers"
+        }
+      ]
+    }
+  ]
+}
