@@ -3,8 +3,10 @@ import os
 import re
 
 base_dir = r"c:\Users\user\Desktop\malik\exo\antigravity\lot1"
+frontend_dir = r"c:\Users\user\Desktop\malik\exo\frontend"
 scan_results_path = os.path.join(base_dir, "scan_results.json")
-nav_map_path = os.path.join(base_dir, "navigation_map.json")
+nav_map_path = os.path.join(frontend_dir, "data", "navigation_map.json")
+os.makedirs(os.path.dirname(nav_map_path), exist_ok=True)
 
 # Helper function to create a basic slug
 def create_slug(text):

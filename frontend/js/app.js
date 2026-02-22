@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             // Using a fetch request to get local JSON created by Cartographe
             // Running python -m http.server to avoid CORS issues locally
-            const res = await fetch('../antigravity/lot1/navigation_map.json');
+            const res = await fetch('data/navigation_map.json');
             if (!res.ok) throw new Error("Navigation Map non trouvée");
 
             State.navMap = await res.json();
