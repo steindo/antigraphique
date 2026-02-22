@@ -1,13 +1,12 @@
 {
   "version": 2,
+  "buildCommand": "echo 'No build step required'",
+  "installCommand": "echo 'No install step required'",
+  "outputDirectory": "frontend",
   "rewrites": [
     {
-      "source": "/",
-      "destination": "/frontend/index.html"
-    },
-    {
       "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "destination": "/$1"
     }
   ]
 }
