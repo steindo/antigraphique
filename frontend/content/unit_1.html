@@ -6,18 +6,31 @@
 
         <section class="exercise-section">
             <h3 class="instruction-title">1 Put the following words and phrases into their correct place in the table depending on their function.</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; font-style: italic;">Explication : Familiarisez-vous avec les mots proposés avant de les placer dans le tableau.</p>
             <div class="word-bank">
                 along with also and as well as besides correspondingly equally furthermore in addition in brief in conclusion in the same way likewise moreover similarly thus therefore to conclude to summarise to sum up briefly too we can conclude that what's more
             </div>
             
-            <div class="complex-asset">
+            <div class="complex-asset" style="position: relative; display: inline-block; margin-top: 20px;">
                 <img src="assets/page9_table.jpg" alt="Table of categorization" class="hd-screenshot" />
+                <div class="overlay-inputs" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                    <!-- Inputs invisibles superposés pour l'illusion numérique -->
+                    <input type="text" class="exercise-input" style="position: absolute; top: 32%; left: 10%; width: 20%; background: var(--bg-secondary); border: 1px solid var(--accent-primary);" placeholder="Catégorie 1" />
+                    <input type="text" class="exercise-input" style="position: absolute; top: 32%; left: 40%; width: 20%; background: var(--bg-secondary); border: 1px solid var(--accent-primary);" placeholder="Catégorie 2" />
+                    <input type="text" class="exercise-input" style="position: absolute; top: 32%; left: 70%; width: 20%; background: var(--bg-secondary); border: 1px solid var(--accent-primary);" placeholder="Catégorie 3" />
+                </div>
+            </div>
+
+            <div class="action-bar" style="gap: 12px;">
+                <button class="btn-correction" onclick="alert('Superviseur : Correction activée')">Correction</button>
+                <button class="btn-primary btn-check" onclick="alert('Superviseur : Validation en cours...')">Check</button>
             </div>
         </section>
 
         <section class="exercise-section">
             <h3 class="instruction-title">2 Complete these sentences with one of the words or phrases from above. In most cases, more than one answer is possible.</h3>
-            <span class="notice">Remember to fill out all the gaps properly!</span>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px; font-style: italic;">Explication : Analysez le contexte et le ton de chaque phrase pour trouver le bon mot de transition.</p>
+            <span class="notice">In most cases, more than one answer is possible. Pay attention to punctuation context.</span>
             <ol class="fill-in-blanks">
                 <li>Tourism brings much-needed money to developing countries. <input type="text" class="exercise-input" placeholder="...">, it provides employment for the local population.</li>
                     <li><input type="text" class="exercise-input" placeholder="..."> bringing much-needed money to developing countries, tourism provides employment for the local population.</li>

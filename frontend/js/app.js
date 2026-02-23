@@ -240,11 +240,9 @@ document.addEventListener("DOMContentLoaded", () => {
             updateFooterNavigation('');
             document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
             breadcrumbs.innerHTML = `<span>Accueil</span> <ion-icon name="chevron-forward-outline"></ion-icon> <span>Sélectionnez une unité</span>`;
-            // Restore Home layout if needed (would require storing the HTML or refreshing)
-            // Just reloading the location usually clears hash, we can also manually reload
-            if (renderArea.querySelector('.unit-container')) {
-                window.location.reload();
-            }
+
+            // --- Scribe Integration for Home --- 
+            loadUnitContent('home');
         }
     }
 
