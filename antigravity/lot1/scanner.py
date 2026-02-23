@@ -41,11 +41,21 @@ scan_results = {
         {
             "filename": "page3.jpg",
             "ocr_text": "About this workbook\nIntroduction\nThis workbook has been written for students who are planning to sit either the Academic or General Training modules of the IELTS examination. It covers some of the main vocabulary areas that you will need for, or come across in, the Listening, Reading, Writing and Speaking sections of the exam.\nWe hope that you find the exercises in this book useful, and that the vocabulary you acquire will help you to achieve the grade you want in the IELTS.\nGood luck!\n\nStructure of the book\nEach vocabulary area is presented in the form of a self-contained module with task-based activities which present each vocabulary item in context.\n- Pages 1 – 57 focus on general vocabulary items...\n- Pages 58 – 104 focus on topic-specific vocabulary areas...\n- Pages 105 – 119 contain some productive practice exercises...",
+            "semantics": {
+                "type": "introduction",
+                "target_audience": "students who are planning to sit either the Academic or General Training modules of the IELTS examination",
+                "advice": "We hope that you find the exercises in this book useful, and that the vocabulary you acquire will help you to achieve the grade you want in the IELTS."
+            },
             "complex_elements": []
         },
         {
             "filename": "page4.jpg",
             "ocr_text": "- Pages 120 – 139 contain a comprehensive key so you can check your answers. The answer key also gives additional information...\nUsing the workbook\nYou should not work through the book mechanically from beginning to end. It is better to choose areas that you are unfamiliar with...\nRecording, reviewing and extending your vocabulary\nRemember that you should keep a record of new words, phrases and expressions...\nUsing an English dictionary\nTo help you develop your vocabulary more effectively, you should use a good monolingual English dictionary...\nThe International English Language Testing System (IELTS)\nThe IELTS is administered by the University of Cambridge Local Examinations Syndicate...",
+            "semantics": {
+                "type": "methodology",
+                "digital_guide": "Profitez du mode interactif, passez de l'encre à l'écran avec une correction instantanée.",
+                "rules": "You should not work through the book mechanically from beginning to end. It is better to choose areas that you are unfamiliar with."
+            },
             "complex_elements": []
         },
         {
@@ -82,6 +92,10 @@ scan_results = {
         {
             "filename": "page10.jpg",
             "ocr_text": "2. ......................................... bringing much-needed money to developing countries, tourism provides employment for the local population.\n3. Tourists should respect the local environment. ......................................... they should respect the local customs.\n4. ......................................... industrial waste, pollution from car fumes is poisoning the environment.\n5. In order to travel, you need a passport. ......................................... , you might need a visa, immunisation jabs and written permission to visit certain areas.\n6. Drugs are banned in Britain - ......................................... weapons such as guns and knives.\n7. All power corrupts. ......................................... , absolute power corrupts absolutely.\n8. You shouldn't smoke, drink, take drugs or eat unhealthy food. ......................................... , you should live a more healthy lifestyle.\n9. The ozone layer is becoming depleted, the air in the cities is becoming too dirty to breathe and our seas and rivers are no longer safe to swim in. ......................................... pollution is slowly destroying the planet.\n10. Your grades have been very poor for the past two years. ......................................... you need to work really hard if you want to pass your exams next month.",
+            "semantics": {
+                "type": "exercise",
+                "notice_hint": "In most cases, more than one answer is possible. Pay attention to punctuation context."
+            },            
             "complex_elements": []
         }
     ]
