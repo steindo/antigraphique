@@ -122,8 +122,8 @@ def run_scribe():
             </div>
 
             <div class="action-bar" style="gap: 12px;">
-                <button class="btn-correction" onclick="alert('Superviseur : Correction activée')">Correction</button>
-                <button class="btn-primary btn-check" onclick="alert('Superviseur : Validation en cours...')">Check</button>
+                <button class="btn-correction">Correction</button>
+                <button class="btn-primary btn-check">Check</button>
             </div>
         </section>
 
@@ -148,8 +148,8 @@ def run_scribe():
             </ol>
             
             <div class="action-bar" style="gap: 12px;">
-                <button class="btn-correction" onclick="alert('Superviseur : Correction activée')">Correction</button>
-                <button class="btn-primary btn-check" onclick="alert('Superviseur : Validation en cours...')">Check</button>
+                <button class="btn-correction">Correction</button>
+                <button class="btn-primary btn-check">Check</button>
             </div>
         </section>
     </div>

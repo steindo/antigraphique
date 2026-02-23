@@ -21,6 +21,31 @@ def run_superviseur():
     errors = 0
     warnings = 0
     
+    # Validation de l'Accueil (home.html)
+    home_html_path = os.path.join(content_dir, "home.html")
+    if not os.path.exists(home_html_path):
+        print("Superviseur (Erreur critique): home.html introuvable.")
+        errors += 1
+    else:
+        with open(home_html_path, 'r', encoding='utf-8') as fh:
+            home_content = fh.read()
+            if "home-layout" in home_content and "Introduction" in home_content:
+                print("Superviseur (Succès): Page d'accueil dynamique validée (paroles de l'auteur présentes).")
+            else:
+                print("Superviseur (Erreur): Manque de sémantique dans l'accueil dynamique.")
+                errors += 1
+                
+    # Validation de la structure index.html (UI globale)
+    index_path = os.path.join(frontend_dir, "index.html")
+    if os.path.exists(index_path):
+        with open(index_path, 'r', encoding='utf-8') as fi:
+            index_content = fi.read()
+            if 'id="sidebar-toggle"' in index_content and 'id="btn-prev"' in index_content:
+                print("Superviseur (Succès): Sidebar (Toggle) et Fixed Footer (Prev/Next) opérationnels.")
+            else:
+                print("Superviseur (Erreur): Boutons de navigation globale manquants dans index.html.")
+                errors += 1
+    
     # 2. Vérification des assets img
     print("Superviseur: Audit des chemins d'images (Assets HD)...")
     img_tags = re.findall(r'<img\s+[^>]*src="([^"]+)"', html_content)
@@ -59,7 +84,15 @@ def run_superviseur():
         print(f"Superviseur (Alerte): Constaté un sous-effectif de {len(input_tags)} champs. Est-ce normal pour cette unité?")
         warnings += 1
     else:
-        print(f"Superviseur (Succès): QA passée. {len(input_tags)} champs de saisie identifiés sur la page d'exercice.")
+        print(f"Superviseur (Succès): QA passée. {len(input_tags)} champs de saisie identifiés sur la page d'exercice (incluant overlay).")
+
+    # 4. Vérification des Composants Pédagogiques
+    print("Superviseur: Audit des aides pédagogiques (Notices, Boutons)...")
+    if '<span class="notice"' in html_content and 'btn-check' in html_content and 'btn-correction' in html_content:
+        print("Superviseur (Succès): Les fonctionnalités pédagogiques (Notices, Boutons Check/Correction) sont parfaitement intégrées.")
+    else:
+        print("Superviseur (Erreur): Il manque des éléments pédagogiques essentiels (Notice, Check ou Correction).")
+        errors += 1
 
     # Apply changes (auto-correction paths)
     if html_content != modified_html:

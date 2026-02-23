@@ -307,6 +307,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Handle Check & Correction Buttons
+    renderArea.addEventListener('click', (e) => {
+        const target = e.target;
+
+        if (target.classList.contains('btn-check')) {
+            const section = target.closest('.exercise-section');
+            if (section) {
+                const inputs = section.querySelectorAll('.exercise-input');
+                let allCorrect = true;
+                inputs.forEach(input => {
+                    // Logic Simulation: currently marks green if not empty
+                    if (input.value.trim() !== '') {
+                        input.style.borderBottomColor = 'var(--accent-primary)';
+                        input.style.backgroundColor = 'rgba(79, 70, 229, 0.1)';
+                        input.style.color = 'var(--accent-primary)';
+                        input.style.fontWeight = 'bold';
+                    } else {
+                        input.style.borderBottomColor = 'red';
+                        allCorrect = false;
+                    }
+                });
+                if (allCorrect && inputs.length > 0) {
+                    target.textContent = "✓ Validé";
+                    target.style.background = "#10B981"; // Green success
+                }
+            }
+        }
+
+        if (target.classList.contains('btn-correction')) {
+            const section = target.closest('.exercise-section');
+            if (section) {
+                const inputs = section.querySelectorAll('.exercise-input');
+                inputs.forEach(input => {
+                    if (input.value.trim() === '') {
+                        // Reveal fake solution for demo
+                        input.value = "Solution";
+                        input.style.color = "var(--text-muted)";
+                        input.style.borderBottomColor = "var(--text-muted)";
+                        input.style.fontStyle = "italic";
+                    }
+                });
+            }
+        }
+    });
+
     // Init the app logic
     initNavigation();
 

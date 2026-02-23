@@ -8,18 +8,22 @@ Ce workflow définit les tâches de l'Agent Superviseur, responsable du contrôl
 
 ## Étapes de Validation et Correction (QA)
 
-1. **Vérification de l'Intégrité des Données** :
-   - Analyser le rendu final des pages traitées (ex: `unit_1.html`).
-   - S'assurer que chaque élément interactif généré recèle des `id` ou des balises sémantiques valides pour que l'Architecte puisse l'animer.
+1. **Validation de l'Accueil (Home) :**
+   - Vérifier que la page `home.html` contient bien les extraits sémantiques de l'auteur (Introduction, Pour qui, Conseils, Guide).
 
-2. **Validation Croisée (Cross-Check)** :
-   - Vérifier la présence des "assets complexes" (ex: images issues de `hd_screenshots`) dans les chemins sources de l'application (ex: `/frontend/assets/...`).
-   - Corriger les anomalies de "chemins cassés" (broken links).
+2. **Test des Composants Pédagogiques (Exercices) :**
+   - S'assurer que le bouton *Check* permet de valider les réponses saisies dans chaque section d'exercice.
+   - S'assurer que le bouton *Correction* révèle la solution pour aider l'étudiant.
+   - Contrôler la présence de la balise `<span class="notice">` avec l'icône ampoule (💡) et de l'explication sous chaque titre d'exercice.
 
-3. **Correction UX/Fonctionnelle Automatisée** :
-   - Tester le nombre de champs input générés face au texte matriciel initial (est-ce que "..............." a bien généré un champ ?).
-   - Injecter les corrections et ajustements de syntaxe (ex: balises mal fermées).
+3. **Vérification Fonctionnelle et Anti-Fraude :**
+   - Analyser le nombre d'inputs interactifs générés (y compris en overlay sur les images).
+   - Valider que la logique d'unicité des mots est opérationnelle.
 
-4. **Clôture du Lot (Batch Clearance)** :
-   - Valider la sortie de production de l'Unité.
-   - Enregistrer l'état "Prêt" pour le lot afin de permettre le passage au traitement des 10 pages suivantes dans le dossier `scan/`.
+4. **Audit de l'Interface Globale (UI/UX) :**
+   - Garantir que la barre de navigation Fixed Footer (`Previous` / `Next`) fonctionne correctement pour synchroniser les pages.
+   - Contrôler que la Sidebar (menu de gauche) ne gêne pas la lecture et peut s'ouvrir/fermer (retraction à gauche) à l'aide de l'icône de menu (Toggle `#sidebar-toggle`).
+
+5. **Approbation Finale :**
+   - Valider la sortie de production de l'Unité avec 0 erreur.
+   - Autoriser le Batch Manager à traiter les 10 pages suivantes dans le dossier `scan/`.
