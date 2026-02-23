@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="fr" data-theme="light" data-font="inter" data-brightness="100">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antigraphique - Interactive Learning</title>
-    
+
     <!-- Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Comic+Neue:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
-    
+
     <!-- Icons -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
-<body>
-    
-    <!-- Hover Target for Sidebar -->
-    <div id="sidebar-trigger"></div>
 
-    <!-- Dynamic Sidebar -->
+<body>
+
+    <!-- Dynamic Sidebar (Mini by default) -->
     <aside id="sidebar" class="sidebar">
         <div class="sidebar-header">
             <div class="logo">
-                <ion-icon name="book-outline"></ion-icon>
-                <span>Antigraphique</span>
+                <ion-icon name="menu-outline" id="sidebar-toggle" style="cursor: pointer; font-size: 2rem;"></ion-icon>
+                <span class="logo-text">Antigraphique</span>
             </div>
         </div>
-        
+
         <div class="sidebar-search">
             <ion-icon name="search-outline"></ion-icon>
             <input type="text" id="route-search" placeholder="Rechercher une unité...">
@@ -36,7 +37,7 @@
         <nav id="sidebar-nav" class="sidebar-nav">
             <!-- Dynamically populated by Agent Cartographe's data -->
         </nav>
-        
+
         <div class="sidebar-footer">
             <div class="dashboard-mini">
                 <div class="dashboard-stat">
@@ -56,9 +57,10 @@
         <!-- Floating Settings Menu -->
         <header class="top-nav">
             <div class="nav-breadcrumbs" id="breadcrumbs">
-                <span>Accueil</span> <ion-icon name="chevron-forward-outline"></ion-icon> <span>Sélectionnez une unité</span>
+                <span>Accueil</span> <ion-icon name="chevron-forward-outline"></ion-icon> <span>Sélectionnez une
+                    unité</span>
             </div>
-            
+
             <div class="settings-toolbar">
                 <div class="setting-group">
                     <button class="settings-btn" id="theme-btn" title="Modifier le thème">
@@ -76,9 +78,12 @@
                         <ion-icon name="text-outline"></ion-icon>
                     </button>
                     <div class="settings-dropdown" id="font-dropdown">
-                        <button data-action="font" data-value="inter" style="font-family: 'Inter', sans-serif;">Moderne (Inter)</button>
-                        <button data-action="font" data-value="outfit" style="font-family: 'Outfit', sans-serif;">Ronde (Outfit)</button>
-                        <button data-action="font" data-value="dyslexic" style="font-family: 'Comic Neue', sans-serif;">Lecture facile</button>
+                        <button data-action="font" data-value="inter" style="font-family: 'Inter', sans-serif;">Moderne
+                            (Inter)</button>
+                        <button data-action="font" data-value="outfit" style="font-family: 'Outfit', sans-serif;">Ronde
+                            (Outfit)</button>
+                        <button data-action="font" data-value="dyslexic"
+                            style="font-family: 'Comic Neue', sans-serif;">Lecture facile</button>
                     </div>
                 </div>
 
@@ -94,17 +99,47 @@
             </div>
         </header>
 
-        <!-- Placeholder for Scribe -->
+        <!-- Placeholder for Scribe or Home Content -->
         <article id="content-render-area" class="content-render-area">
-            <div class="welcome-banner">
-                <ion-icon name="sparkles-outline"></ion-icon>
-                <h1>Bienvenue dans le système Antigraphique.</h1>
-                <p>Déplacez votre souris sur le bord gauche pour ouvrir le menu adaptatif.</p>
-                <p>Sélectionnez une unité pour commencer.</p>
+            <div class="home-layout fadeIn">
+                <section class="home-intro">
+                    <ion-icon name="sparkles-outline" class="hero-icon"></ion-icon>
+                    <h1>Bienvenue dans le système Antigraphique</h1>
+                    <p>Votre outil interactif d'apprentissage immersif.</p>
+                </section>
+
+                <div class="home-grid">
+                    <div class="home-card">
+                        <h3><ion-icon name="information-circle-outline"></ion-icon> Introduction</h3>
+                        <p>Plongez dans un apprentissage modulaire conçu pour optimiser votre rétention.</p>
+                    </div>
+                    <div class="home-card">
+                        <h3><ion-icon name="people-outline"></ion-icon> À qui s'adresse ce livre ?</h3>
+                        <p>Étudiants, professionnels et passionnés souhaitant maîtriser le vocabulaire technique avec
+                            précision.</p>
+                    </div>
+                    <div class="home-card">
+                        <h3><ion-icon name="bulb-outline"></ion-icon> Conseils de l'auteur</h3>
+                        <p>Travaillez par petites sessions, utilisez les indices (💡) et pratiquez la répétition
+                            espacée.</p>
+                    </div>
+                    <div class="home-card">
+                        <h3><ion-icon name="laptop-outline"></ion-icon> Guide de transition numérique</h3>
+                        <p>Profitez du mode interactif, passez de l'encre à l'écran avec une correction instantanée.</p>
+                    </div>
+                </div>
             </div>
         </article>
     </main>
 
+    <!-- Fixed Footer Navigation -->
+    <footer class="fixed-footer">
+        <button id="btn-prev" class="footer-btn"><ion-icon name="arrow-back-outline"></ion-icon> Previous</button>
+        <span class="page-indicator">Page <span id="current-page">1</span> / <span id="total-pages">1</span></span>
+        <button id="btn-next" class="footer-btn">Next <ion-icon name="arrow-forward-outline"></ion-icon></button>
+    </footer>
+
     <script src="js/app.js"></script>
 </body>
+
 </html>

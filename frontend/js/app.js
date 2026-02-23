@@ -21,9 +21,23 @@ document.addEventListener("DOMContentLoaded", () => {
     // DOM Elements
     const rootLayout = document.documentElement;
     const body = document.body;
+    const sidebar = document.getElementById('sidebar');
+    const sidebarToggle = document.getElementById('sidebar-toggle');
     const sidebarNav = document.getElementById('sidebar-nav');
     const brightnessSlider = document.getElementById('brightness-slider');
     const breadcrumbs = document.getElementById('breadcrumbs');
+    const btnPrev = document.getElementById('btn-prev');
+    const btnNext = document.getElementById('btn-next');
+    const currentPageSpan = document.getElementById('current-page');
+    const totalPagesSpan = document.getElementById('total-pages');
+    const renderArea = document.getElementById('content-render-area');
+
+    // Sidebar Toggle
+    if (sidebarToggle) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('expanded');
+        });
+    }
 
     /**
      * Settings Initialization
@@ -142,6 +156,58 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
     }
 
+    // Nav Footer management
+    function getFlatUnits() {
+        if (!State.navMap) return [];
+        return State.navMap.categories.reduce((acc, cat) => acc.concat(cat.units), []);
+    }
+
+    function updateFooterNavigation(currentRouteStr) {
+        const flatUnits = getFlatUnits();
+        if (flatUnits.length === 0) return;
+
+        totalPagesSpan.textContent = flatUnits.length;
+
+        let currentIndex = flatUnits.findIndex(u => u.route === currentRouteStr);
+        if (currentIndex === -1) {
+            // Probably at Home
+            currentPageSpan.textContent = "-";
+            btnPrev.style.opacity = '0.5';
+            btnPrev.style.pointerEvents = 'none';
+            btnNext.style.opacity = '1';
+            btnNext.style.pointerEvents = 'auto';
+
+            // Set next to unit 1
+            btnNext.onclick = () => window.location.hash = flatUnits[0].route;
+            return;
+        }
+
+        currentPageSpan.textContent = currentIndex + 1;
+
+        // Prev buttons
+        if (currentIndex > 0) {
+            btnPrev.style.opacity = '1';
+            btnPrev.style.pointerEvents = 'auto';
+            btnPrev.onclick = () => window.location.hash = flatUnits[currentIndex - 1].route;
+        } else {
+            // First unit -> go to home
+            btnPrev.style.opacity = '1';
+            btnPrev.style.pointerEvents = 'auto';
+            btnPrev.onclick = () => window.location.hash = "";
+        }
+
+        // Next buttons
+        if (currentIndex < flatUnits.length - 1) {
+            btnNext.style.opacity = '1';
+            btnNext.style.pointerEvents = 'auto';
+            btnNext.onclick = () => window.location.hash = flatUnits[currentIndex + 1].route;
+        } else {
+            // Last unit
+            btnNext.style.opacity = '0.5';
+            btnNext.style.pointerEvents = 'none';
+        }
+    }
+
     async function highlightCurrentRoute() {
         if (window.location.hash) {
             const currentRouteStr = window.location.hash.replace('#', '');
@@ -159,12 +225,25 @@ document.addEventListener("DOMContentLoaded", () => {
                         // Auto scroll to active
                         el.scrollIntoView({ behavior: "smooth", block: "center" });
 
+                        // --- Nav Footer Update ---
+                        updateFooterNavigation(currentRouteStr);
+
                         // --- Scribe Integration --- 
                         // Load HTML Content for this specific Unit
                         loadUnitContent(found.id_unit);
                     }
                     break;
                 }
+            }
+        } else {
+            // Route vide (Accueil)
+            updateFooterNavigation('');
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+            breadcrumbs.innerHTML = `<span>Accueil</span> <ion-icon name="chevron-forward-outline"></ion-icon> <span>Sélectionnez une unité</span>`;
+            // Restore Home layout if needed (would require storing the HTML or refreshing)
+            // Just reloading the location usually clears hash, we can also manually reload
+            if (renderArea.querySelector('.unit-container')) {
+                window.location.reload();
             }
         }
     }
@@ -203,6 +282,32 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
         }
     }
+
+    // Input Protection (Gamification anti-cheat / anti-duplicate)
+    renderArea.addEventListener('input', (e) => {
+        if (e.target.classList.contains('exercise-input')) {
+            const val = e.target.value.trim().toLowerCase();
+            if (!val) return;
+
+            // Limit search scope to the current exercise section
+            const container = e.target.closest('.exercise-section');
+            if (!container) return;
+
+            const inputs = container.querySelectorAll('.exercise-input');
+            inputs.forEach(input => {
+                if (input !== e.target && input.value.trim().toLowerCase() === val) {
+                    input.value = ''; // Prevent duplication
+                    // Visual Feedback for user
+                    input.style.borderBottomColor = 'red';
+                    input.style.backgroundColor = 'rgba(255,0,0,0.1)';
+                    setTimeout(() => {
+                        input.style.borderBottomColor = '';
+                        input.style.backgroundColor = '';
+                    }, 1000);
+                }
+            });
+        }
+    });
 
     // Init the app logic
     initNavigation();

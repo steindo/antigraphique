@@ -75,6 +75,7 @@ def run_scribe():
 
         <section class="exercise-section">
             <h3 class="instruction-title">{instruction2}</h3>
+            <span class="notice">Remember to fill out all the gaps properly!</span>
             <ol class="fill-in-blanks">
                 <li>{interactify(sentence1.replace("1. ", ""))}</li>
     """
@@ -91,8 +92,9 @@ def run_scribe():
     html_content += """
             </ol>
             
-            <div class="action-bar">
-                <button class="btn-primary" onclick="alert('Superviseur : Validation en cours...')">Vérifier mes réponses</button>
+            <div class="action-bar" style="gap: 12px;">
+                <button class="btn-correction" onclick="alert('Superviseur : Correction activée')">Correction</button>
+                <button class="btn-primary btn-check" onclick="alert('Superviseur : Validation en cours...')">Check</button>
             </div>
         </section>
     </div>
